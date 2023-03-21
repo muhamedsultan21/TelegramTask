@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Edit name"
+        android:id="@+id/name"
+        app:showAsAction="never"
+        />
+    <item android:title="Set Profile Photo"
+        app:showAsAction="never"
+        android:id="@+id/photo"/>
+    <item android:title="Save to Gallery"
+        app:showAsAction="never"
+        android:id="@+id/gallary"/>
+
+    <item android:title="Delete"
+        app:showAsAction="never"
+        android:id="@+id/delete"/>
+
+    <item android:title="Log Out"
+        app:showAsAction="never"
+        android:id="@+id/logout"/>
+    <item android:title="QR Code"
+        android:icon="@drawable/ic_qr_code"
+        app:showAsAction="always"
+        />
+
+</menu>

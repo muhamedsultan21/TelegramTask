@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/root_background_color"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/myapp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/person"
+            android:fitsSystemWindows="true"
+            app:contentScrim="#212D3B"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.75"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="Tim Templeton"
+
+            app:toolbarId="@id/toolbar">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/person"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_back" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circleImage"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:src="@drawable/person"
+                    android:visibility="invisible" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="86dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginHorizontal="16dp"
+                android:backgroundTint="@color/fab_color"
+                android:src="@drawable/ic_camera"
+                android:tintMode="@color/white" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrolling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/back_ground_color"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/Account"
+                    style="@style/text_sections"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_text" />
+
+                <TextView
+                    android:id="@+id/phoneNumber"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_number" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:hint="@string/change_number"
+                    android:textColorHint="@color/hint_color"
+                    android:textSize="14sp" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/UserName"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_name" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:hint="@string/text_username"
+                    android:textColorHint="@color/hint_color"
+                    android:textSize="14sp" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+
+                <TextView
+                    android:id="@+id/bio"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bio" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:hint="@string/details_about_user"
+                    android:textColorHint="@color/hint_color"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:background="@color/back_ground_color"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Settings"
+                    style="@style/text_sections"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_settings" />
+
+
+                <TextView
+                    android:id="@+id/chatSetting"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chatsetting"
+                    app:drawableStartCompat="@drawable/ic_chat" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/Privacy"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/privacy"
+                    app:drawableStartCompat="@drawable/ic_privacy" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+
+                <TextView
+                    android:id="@+id/notifications"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notifications"
+                    app:drawableStartCompat="@drawable/ic_notification" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/data"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/data_and_storage"
+                    app:drawableStartCompat="@drawable/ic_data" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/powerSaving"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/powersaving"
+                    android:textColor="@color/white"
+                    app:drawableStartCompat="@drawable/ic_saver" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/chatFolders"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chatfolders"
+                    app:drawableStartCompat="@drawable/ic_chat_folder" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+
+                <TextView
+                    android:id="@+id/Device"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/device"
+                    app:drawableStartCompat="@drawable/ic_device" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/language"
+                        style="@style/user_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/language"
+                        app:drawableStartCompat="@drawable/ic_language" />
+
+                    <TextView
+                        android:id="@+id/language_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="end"
+                        android:text="English"
+                        android:textColor="@color/text_sections_color"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:background="@color/back_ground_color"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TelegramPremium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:drawablePadding="8dp"
+                    android:text="@string/telegrampremium"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_star" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/back_ground_color"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/help"
+                    style="@style/text_sections"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/help" />
+
+                <TextView
+                    android:id="@+id/askQuestion"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ask_a_ouestion"
+                    app:drawableStartCompat="@drawable/question" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/telegramFAQ"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telegram_faq"
+                    app:drawableStartCompat="@drawable/ic_faq" />
+
+                <View
+                    style="@style/line_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/privacyPolicy"
+                    style="@style/user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/privacypolicy"
+                    app:drawableStartCompat="@drawable/ic_policy    " />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
